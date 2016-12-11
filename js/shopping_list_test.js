@@ -14,7 +14,6 @@ describe('ShoppingListItem', ()=>{
     listItem = new ShoppingListItem('Avocado', 'Green and full of calories');
   });
 
-
   it('should be a class', ()=>{
     ShoppingListItem.should.be.a('function');
   });
@@ -43,7 +42,7 @@ describe('ShoppingListItem', ()=>{
     listItem.check.should.be.a('function');
   });
 
-  it('should return is_done as true',()=>{
+  it('should return is_done as true', ()=>{
     listItem.check();
     listItem.is_done.should.equal(true);
   });
@@ -61,5 +60,66 @@ describe('ShoppingListItem', ()=>{
     listItem.render.should.be.a('function');
   });
 
+});
+
+describe('ShoppingList', () => {
+  let shoppingList;
+
+  beforeEach(() => {
+    shoppingList = new ShoppingList(['Cereal', 'Milk']);
+  });
+
+  it('should be a class', () => {
+    ShoppingList.should.be.a('function');
+  });
+
+  it('should have a property named items', () => {
+    shoppingList.should.have.property('items');
+  });
+
+  it('should contain an empty array', () => {
+    shoppingList.items.should.be.an('array');
+    shoppingList.items.should.deep.equal([]);
+  });
+
+  it('should have a method named addItem', () => {
+    shoppingList.addItem.should.be.a('function');
+  });  
+
+  it('should add Cookies to the array', () => {
+    shoppingList.addItem();
+    shoppingList.items.should.be.an.instanceof(ShoppingListItem.name);
+    shoppingList.items.push('Cookies');
+  });
+
+  it('should throw an error', () => {
+    shoppingList.addItem.should.throw(Error);
+  });
+
+  it('should have a method named removeItem', () => {
+    shoppingList.removeItem.should.be.a('function');
+  });  
+
+  it('should remove Oranges from the array', () => {
+    let shoppingList = new ShoppingList(['Apples', 'Oranges', 'Bananas']);
+    shoppingList.removeItem();
+    shoppingList.items.should.be.an.instanceof(ShoppingListItem.name);
+    shoppingList.items.splice((shoppingList.items.indexOf('Oranges'), 1));
+  });
+
+  it('should remove Bananas from the array', () => {
+    let shoppingList = new ShoppingList(['Apples', 'Oranges', 'Bananas']);
+    shoppingList.removeItem();
+    shoppingList.should.be.an.instanceof(ShoppingListItem.name);
+    shoppingList.items.pop();
+  });
+
+  it('should throw an error', () => {
+    shoppingList.removeItem.should.throw(Error);
+  });
+
+  it('should have a method named render', () => {
+    shoppingList.render.should.be.a('function');
+  });
 
 });
