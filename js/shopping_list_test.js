@@ -24,7 +24,7 @@ describe('ShoppingListItem', ()=>{
   });
 
   it('should have the name Avocado', ()=>{
-    listItem.name.should.be('Avocado');
+    listItem.name.should.equal('Avocado');
   });
 
   it('should have property named description', ()=>{
@@ -32,7 +32,7 @@ describe('ShoppingListItem', ()=>{
   });
 
   it('should have the description Green and full of calories', ()=>{
-    listItem.description.should.be('Green and full of calories');
+    listItem.description.should.equal('Green and full of calories');
   });
 
   it('should have property named is_done', ()=>{
@@ -45,7 +45,7 @@ describe('ShoppingListItem', ()=>{
 
   it('should return is_done as true',()=>{
     listItem.check();
-    listItem.is_done.should.be(true);
+    listItem.is_done.should.equal(true);
   });
 
   it('should have a method named uncheck', ()=>{
@@ -54,7 +54,7 @@ describe('ShoppingListItem', ()=>{
 
   it('should return is_done as false', ()=>{
     listItem.uncheck();
-    listItem.is_done.should.be(false);
+    listItem.is_done.should.equal(false);
   });
 
   it('should have a method named render', ()=>{
