@@ -8,11 +8,11 @@ class ShoppingListItem {
   }
 
   check() {
-    this.is_done = null;
+    this.is_done = true;
   }
 
   uncheck() {
-    this.is_done = null;
+    this.is_done = false;
   }
 
   render() {
