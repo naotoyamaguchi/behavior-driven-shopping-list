@@ -45,7 +45,7 @@ describe('ShoppingListItem', ()=>{
 
   it('should return is_done as true',()=>{
     listItem.check();
-    listItem.is_done.should.be('true');
+    listItem.is_done.should.be(true);
   });
 
   it('should have a method named uncheck', ()=>{
@@ -54,7 +54,7 @@ describe('ShoppingListItem', ()=>{
 
   it('should return is_done as false', ()=>{
     listItem.uncheck();
-    listItem.is_done.should.be('false');
+    listItem.is_done.should.be(false);
   });
 
   it('should have a method named render', ()=>{
