@@ -11,7 +11,7 @@ describe('ShoppingListItem', ()=>{
   let listItem;
 
   beforeEach(()=>{
-    listItem = new ShoppingListItem('test');
+    listItem = new ShoppingListItem('Avocado', 'Green and full of calories');
   });
 
 
@@ -23,8 +23,16 @@ describe('ShoppingListItem', ()=>{
     listItem.should.have.property('name');
   });
 
+  it('should have the name Avocado', ()=>{
+    listItem.name.should.be('Avocado');
+  });
+
   it('should have property named description', ()=>{
     listItem.should.have.property('description');
+  });
+
+  it('should have the description Green and full of calories', ()=>{
+    listItem.description.should.be('Green and full of calories');
   });
 
   it('should have property named is_done', ()=>{
@@ -32,15 +40,25 @@ describe('ShoppingListItem', ()=>{
   });
 
   it('should have a method named check', ()=>{
-    listItem.should.have.method('check');
+    listItem.check.should.be.a('function');
+  });
+
+  it('should return is_done as true',()=>{
+    listItem.check();
+    listItem.is_done.should.be('true');
   });
 
   it('should have a method named uncheck', ()=>{
-    listItem.should.have.method('uncheck');
+    listItem.uncheck.should.be.a('function');
+  });
+
+  it('should return is_done as false', ()=>{
+    listItem.uncheck();
+    listItem.is_done.should.be('false');
   });
 
   it('should have a method named render', ()=>{
-    listItem.should.have.method('render');
+    listItem.render.should.be.a('function');
   });
 
 
