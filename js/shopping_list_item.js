@@ -16,7 +16,18 @@ class ShoppingListItem {
   }
 
   render() {
+    var htmlOutput = document.createElement('li');
+    htmlOutput.className = `completed_${this.is_done}`;
 
+    var nameSpan = document.createElement('span');
+    nameSpan.innerHTML = `${this.name}`;
+    htmlOutput.appendChild(nameSpan);
+
+    var descriptionSpan = document.createElement('span');
+    descriptionSpan.innerHTML = `${this.description}`;
+    htmlOutput.appendChild(descriptionSpan);
+
+    return htmlOutput.outerHTML;
   }
 
 }
