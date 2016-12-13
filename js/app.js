@@ -20,5 +20,10 @@ function add_to_shopping_list(){
 }
 
 function changeCheckedStatus(idx, checkbox){
-  console.log("sanittttyyy");
+  if(this.checked){
+    console.log("this.chekced");
+  }
+  if(!this.checked){
+    console.log("!this.checked");
+  }
 }
