@@ -30,7 +30,7 @@ class ShoppingList {
     var listHTML = document.createElement('ul');
     for(let i = 0; i < this.items.length; i++){
       var listItem = document.createElement('li');
-      listItem.innerHTML = this.items[i];
+      listItem.innerHTML = this.items[i].render();
       listHTML.appendChild(listItem);
     }
     return listHTML.outerHTML;
