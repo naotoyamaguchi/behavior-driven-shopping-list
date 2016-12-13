@@ -1,5 +1,9 @@
 // jshint esversion: 6
 
+function testtt(){
+  console.log("TESTTT");
+}
+
 class ShoppingListItem {
   constructor(name, description, is_done) {
     this.name = name;
@@ -28,7 +32,9 @@ class ShoppingListItem {
 
     var checkBox = document.createElement('input');
     checkBox.type = "checkbox";
-    checkBox.addEventListener('change', changeCheckedStatus());
+    checkBox.addEventListener('change', function(){
+      changeCheckedStatus();
+    });
     content.appendChild(checkBox);
 
     return itemHTML.outerHTML;
