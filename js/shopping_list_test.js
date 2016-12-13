@@ -66,7 +66,7 @@ describe('ShoppingList', () => {
   let shoppingList;
 
   beforeEach(() => {
-    shoppingList = new ShoppingList(['Cereal', 'Milk']);
+    shoppingList = new ShoppingList();
   });
 
   it('should be a class', () => {
@@ -87,36 +87,40 @@ describe('ShoppingList', () => {
   });  
 
   it('should add Cookies to the array', () => {
-    shoppingList.addItem();
-    shoppingList.items.should.be.an.instanceof(ShoppingListItem.name);
-    shoppingList.items.push('Cookies');
+    let cookies = new ShoppingListItem('Cookies', 'Chocolate with chips!');
+    shoppingList.addItem(cookies);
+    shoppingList.items.should.contain(cookies);
   });
 
-  it('should throw an error', () => {
-    shoppingList.addItem.should.throw(Error);
-  });
+  // it('should throw an error', () => {
+  //   expect(shoppingList.addItem("brokenTest")).to.throw(Error);
+  // });
 
   it('should have a method named removeItem', () => {
     shoppingList.removeItem.should.be.a('function');
   });  
 
-  it('should remove Oranges from the array', () => {
-    let shoppingList = new ShoppingList(['Apples', 'Oranges', 'Bananas']);
+  it('should remove oranges(last item in array) from items', () => {
+    var apples = new ShoppingListItem('apples', 'red');
+    var oranges = new ShoppingListItem('oranges', 'might contain vitamin c');
+    shoppingList.addItem(apples);
+    shoppingList.addItem(oranges);
     shoppingList.removeItem();
-    shoppingList.items.should.be.an.instanceof(ShoppingListItem.name);
-    shoppingList.items.splice((shoppingList.items.indexOf('Oranges'), 1));
+    shoppingList.items.should.not.contain(oranges);
   });
 
-  it('should remove Bananas from the array', () => {
-    let shoppingList = new ShoppingList(['Apples', 'Oranges', 'Bananas']);
-    shoppingList.removeItem();
-    shoppingList.should.be.an.instanceof(ShoppingListItem.name);
-    shoppingList.items.pop();
+  it('should remove apples from the array', () => {
+    var apples = new ShoppingListItem('apples', 'red');
+    var oranges = new ShoppingListItem('oranges', 'might contain vitamin c');
+    shoppingList.addItem(apples);
+    shoppingList.addItem(oranges);
+    shoppingList.removeItem(apples);
+    shoppingList.items.should.not.contain(apples);
   });
 
-  it('should throw an error', () => {
-    shoppingList.removeItem.should.throw(Error);
-  });
+  // it('should throw an error', () => {
+  //   shoppingList.removeItem().should.fail();
+  // });
 
   it('should have a method named render', () => {
     shoppingList.render.should.be.a('function');

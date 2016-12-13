@@ -9,7 +9,7 @@ class ShoppingList {
     if(item instanceof ShoppingListItem){
       this.items.push(item);
     } else {
-      throw err;
+      throw new Error('Not a valid input for the shopping list!');
     }
   }
 
@@ -17,10 +17,11 @@ class ShoppingList {
     if(this.items.indexOf(item) > -1 && item instanceof ShoppingListItem){
       this.items.splice(this.items.indexOf(item), 1);
     }
-    if(item === undefined && this.items.length > 0){
+    else if(item === undefined && this.items.length > 0){
       this.items.pop();
-    } else {
-      throw err;
+    } 
+    else if(this.items.indexOf(item) === - 1){
+      throw new Error("That's not a valid item!");
     }
 
   }
