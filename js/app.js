@@ -60,29 +60,25 @@ function removeItemButtonClicked(idx){
   let ulLists = document.querySelectorAll('ul');
   let liLists = document.querySelectorAll('li');
 
-  liLists[idx].parentNode.parentNode.removeChild(liLists[idx].parentNode);
-  shoppingList.removeItem(shoppingList.items[idx]);
+  // liLists[idx].parentNode.parentNode.removeChild(liLists[idx].parentNode);
+  // shoppingList.removeItem(shoppingList.items[idx]);
 
+  shoppingListRenderOutput = shoppingList.render();
 
+  document.getElementById('content').innerHTML = shoppingListRenderOutput;
 
+  let checkBoxes = document.querySelectorAll('.checkboxClass');
+  console.log(checkBoxes[0]);
+  let deleteBoxes = document.querySelectorAll('.deleteBoxClass');
+  for(let i = 0; i < checkBoxes.length; i++){
+    checkBoxes[i].addEventListener('click', function(){
+      changeCheckedStatus(i, checkBoxes[i]);
+    });
 
-
-  // shoppingListRenderOutput = shoppingList.render();
-
-  // document.getElementById('content').innerHTML = shoppingListRenderOutput;
-
-  // let checkBoxes = document.querySelectorAll('.checkboxClass');
-  // console.log(checkBoxes[0]);
-  // let deleteBoxes = document.querySelectorAll('.deleteBoxClass');
-  // for(let i = 0; i < checkBoxes.length; i++){
-  //   checkBoxes[i].addEventListener('click', function(){
-  //     changeCheckedStatus(i, checkBoxes[i]);
-  //   });
-
-  //   deleteBoxes[i].addEventListener('click', function(){
-  //     removeItemButtonClicked(i);
-  //   });
-  // }
+    deleteBoxes[i].addEventListener('click', function(){
+      removeItemButtonClicked(i);
+    });
+  }
 
 }
 
