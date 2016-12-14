@@ -17,6 +17,7 @@ checkBoxes.addEventListener('click', function(event){
 });
 
 
+
 function add_to_shopping_list(){
   let itemNameInput = document.getElementById('itemName').value;
   let itemDescriptionInput = document.getElementById('itemDescription').value;
@@ -29,6 +30,15 @@ function add_to_shopping_list(){
   shoppingListRenderOutput = shoppingList.render();
 
   document.getElementById('content').innerHTML = shoppingListRenderOutput;
+
+  let checkBoxes = document.querySelector('.listHTML');
+
+  checkBoxes.addEventListener('click', function(event){
+    if(event.target.nodeName === 'INPUT' && event.toElement.checked === true){
+      console.log(event);
+    }
+  });
+
 }
 
 function changeCheckedStatus(idx, checkbox){
