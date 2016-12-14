@@ -30,12 +30,9 @@ class ShoppingListItem {
     descriptionSpan.innerHTML = this.description;
     itemHTML.appendChild(descriptionSpan);
 
-    // var checkBox = document.createElement('input');
-    // checkBox.type = "checkbox";
-    // checkBox.addEventListener('change', function(){
-    //   changeCheckedStatus();
-    // });
-    // content.appendChild(checkBox);
+    var checkBox = document.createElement('input');
+    checkBox.type = "checkbox";
+    itemHTML.appendChild(checkBox);
 
     return itemHTML.outerHTML;
   }

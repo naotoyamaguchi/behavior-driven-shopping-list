@@ -6,6 +6,16 @@ let shoppingList = new ShoppingList();
 let shoppingListRenderOutput = shoppingList.render();
 document.getElementById('content').innerHTML = shoppingListRenderOutput;
 
+// let checkBoxes = document.querySelectorAll('input[type="checkbox"]');
+
+let checkBoxes = document.querySelector("li");
+
+checkBoxes.addEventListener('click', function(event){
+  if(event.target.nodeName === 'INPUT' && event.toElement.checked === true){
+    console.log("yolo");
+  }
+});
+
 
 function add_to_shopping_list(){
   let itemNameInput = document.getElementById('itemName').value;
@@ -29,3 +39,4 @@ function changeCheckedStatus(idx, checkbox){
     console.log("!this.checked");
   }
 }
+
