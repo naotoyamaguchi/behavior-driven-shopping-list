@@ -6,6 +6,16 @@ let shoppingList = new ShoppingList();
 let shoppingListRenderOutput = shoppingList.render();
 document.getElementById('content').innerHTML = shoppingListRenderOutput;
 
+// let checkBoxes = document.querySelectorAll('input[type="checkbox"]');
+
+let checkBoxes = document.querySelector("li");
+
+checkBoxes.addEventListener('click', function(event){
+  if(event.target.nodeName === 'INPUT' && event.toElement.checked === true){
+    console.log("yolo");
+  }
+});
+
 
 function add_to_shopping_list(){
   let itemNameInput = document.getElementById('itemName').value;
@@ -15,8 +25,18 @@ function add_to_shopping_list(){
   new_shopping_list_item = new ShoppingListItem(itemNameInput, itemDescriptionInput, false);
 
   shoppingList.addItem(new_shopping_list_item);
+
+  shoppingListRenderOutput = shoppingList.render();
+
+  document.getElementById('content').innerHTML = shoppingListRenderOutput;
 }
 
 function changeCheckedStatus(idx, checkbox){
-  console.log("sanity");
+  if(this.checked){
+    console.log("this.chekced");
+  }
+  if(!this.checked){
+    console.log("!this.checked");
+  }
 }
+

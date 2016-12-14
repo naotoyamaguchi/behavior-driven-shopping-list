@@ -1,5 +1,9 @@
 // jshint esversion: 6
 
+function testtt(){
+  console.log("TESTTT");
+}
+
 class ShoppingListItem {
   constructor(name, description, is_done) {
     this.name = name;
@@ -19,7 +23,7 @@ class ShoppingListItem {
     var itemHTML = document.createElement('li');
     itemHTML.className = 'completed_' + this.is_done;
     var nameSpan = document.createElement('span');
-    nameSpan.innerHTML = this.name;
+    nameSpan.innerHTML = this.name + ": ";
     itemHTML.appendChild(nameSpan);
 
     var descriptionSpan = document.createElement('span');
@@ -28,8 +32,7 @@ class ShoppingListItem {
 
     var checkBox = document.createElement('input');
     checkBox.type = "checkbox";
-    checkBox.addEventListener('change', changeCheckedStatus());
-    content.appendChild(checkBox);
+    itemHTML.appendChild(checkBox);
 
     return itemHTML.outerHTML;
   }
