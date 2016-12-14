@@ -34,6 +34,8 @@ class ShoppingListItem {
     checkBox.type = "checkbox";
     itemHTML.appendChild(checkBox);
 
+    let checkBoxes = document.querySelector('.listHTML');
+
     return itemHTML.outerHTML;
   }
 

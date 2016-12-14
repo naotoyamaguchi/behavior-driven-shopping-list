@@ -6,9 +6,8 @@ let shoppingList = new ShoppingList();
 let shoppingListRenderOutput = shoppingList.render();
 document.getElementById('content').innerHTML = shoppingListRenderOutput;
 
-// let checkBoxes = document.querySelectorAll('input[type="checkbox"]');
 
-let checkBoxes = document.querySelector("li");
+let checkBoxes = document.querySelector('.listHTML');
 
 checkBoxes.addEventListener('click', function(event){
   if(event.target.nodeName === 'INPUT' && event.toElement.checked === true){
@@ -29,6 +28,14 @@ function add_to_shopping_list(){
   shoppingListRenderOutput = shoppingList.render();
 
   document.getElementById('content').innerHTML = shoppingListRenderOutput;
+
+  let checkBoxes = document.querySelector('.listHTML');
+
+  checkBoxes.addEventListener('click', function(event){
+    if(event.target.nodeName === 'INPUT' && event.toElement.checked === true){
+      console.log(event);
+    }
+  });
 }
 
 function changeCheckedStatus(idx, checkbox){
