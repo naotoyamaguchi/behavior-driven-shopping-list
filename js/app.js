@@ -8,13 +8,13 @@ document.getElementById('content').innerHTML = shoppingListRenderOutput;
 
 // let checkBoxes = document.querySelectorAll('input[type="checkbox"]');
 
-let checkBoxes = document.querySelector("li");
+// let checkBoxes = document.querySelector("li");
 
-checkBoxes.addEventListener('click', function(event){
-  if(event.target.nodeName === 'INPUT' && event.toElement.checked === true){
-    console.log("yolo");
-  }
-});
+// checkBoxes.addEventListener('click', function(event){
+//   if(event.target.nodeName === 'INPUT' && event.toElement.checked === true){
+//     console.log("yolo");
+//   }
+// });
 
 
 
