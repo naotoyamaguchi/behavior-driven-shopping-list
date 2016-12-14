@@ -31,22 +31,29 @@ function add_to_shopping_list(){
 
   document.getElementById('content').innerHTML = shoppingListRenderOutput;
 
-  let checkBoxes = document.querySelector('.listHTML');
+  let checkBoxes = document.querySelectorAll('.checkboxClass');
 
-  checkBoxes.addEventListener('click', function(event){
-    if(event.target.nodeName === 'INPUT' && event.toElement.checked === true){
-      console.log(event);
-    }
-  });
+  // checkBoxes.addEventListener('click', function(event){
+  //   if(event.target.nodeName === 'INPUT'){
+  //     changeCheckedStatus();
+  //   }
+  // });
+
+  for(let i = 0; i < checkBoxes.length; i++){
+    checkBoxes[i].addEventListener('click', function(){
+      changeCheckedStatus(i, checkBoxes[i]);
+    });
+  }
 
 }
 
 function changeCheckedStatus(idx, checkbox){
-  if(this.checked){
-    console.log("this.chekced");
-  }
-  if(!this.checked){
-    console.log("!this.checked");
-  }
+    if(checkbox.checked === true){
+      console.log("CHECKED");
+    }
+    if(checkbox.checked === false){
+      console.log("ITS NOT CHECKED");
+    }
 }
 
+// && event.toElement.checked === true

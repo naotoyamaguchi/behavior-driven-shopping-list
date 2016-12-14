@@ -32,6 +32,7 @@ class ShoppingListItem {
 
     var checkBox = document.createElement('input');
     checkBox.type = "checkbox";
+    checkBox.className = "checkboxClass";
     itemHTML.appendChild(checkBox);
 
     return itemHTML.outerHTML;
