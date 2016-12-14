@@ -57,11 +57,11 @@ function changeCheckedStatus(idx, checkbox){
 }
 
 function removeItemButtonClicked(idx){
-  let ulLists = document.querySelectorAll('ul');
-  let liLists = document.querySelectorAll('li');
+  // let ulLists = document.querySelectorAll('ul');
+  // let liLists = document.querySelectorAll('li');
 
   // liLists[idx].parentNode.parentNode.removeChild(liLists[idx].parentNode);
-  // shoppingList.removeItem(shoppingList.items[idx]);
+  shoppingList.removeItem(shoppingList.items[idx]);
 
   shoppingListRenderOutput = shoppingList.render();
 
