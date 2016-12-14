@@ -49,10 +49,10 @@ function add_to_shopping_list(){
 
 function changeCheckedStatus(idx, checkbox){
     if(checkbox.checked === true){
-      console.log("CHECKED");
+      shoppingList.items[idx].check();
     }
     if(checkbox.checked === false){
-      console.log("ITS NOT CHECKED");
+      shoppingList.items[idx].uncheck();
     }
 }
 
