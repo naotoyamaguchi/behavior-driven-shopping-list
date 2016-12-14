@@ -35,6 +35,11 @@ class ShoppingListItem {
     checkBox.className = "checkboxClass";
     itemHTML.appendChild(checkBox);
 
+    var deleteBox = document.createElement('button');
+    deleteBox.className = "deleteBoxClass";
+    deleteBox.innerHTML = 'X';
+    itemHTML.appendChild(deleteBox);
+
     return itemHTML.outerHTML;
   }
 

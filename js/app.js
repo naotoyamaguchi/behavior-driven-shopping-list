@@ -32,28 +32,60 @@ function add_to_shopping_list(){
   document.getElementById('content').innerHTML = shoppingListRenderOutput;
 
   let checkBoxes = document.querySelectorAll('.checkboxClass');
-
-  // checkBoxes.addEventListener('click', function(event){
-  //   if(event.target.nodeName === 'INPUT'){
-  //     changeCheckedStatus();
-  //   }
-  // });
-
+  let deleteBoxes = document.querySelectorAll('.deleteBoxClass');
   for(let i = 0; i < checkBoxes.length; i++){
     checkBoxes[i].addEventListener('click', function(){
       changeCheckedStatus(i, checkBoxes[i]);
     });
+
+    deleteBoxes[i].addEventListener('click', function(){
+      removeItemButtonClicked(i);
+    });
   }
+
+
 
 }
 
 function changeCheckedStatus(idx, checkbox){
-    if(checkbox.checked === true){
-      shoppingList.items[idx].check();
-    }
-    if(checkbox.checked === false){
-      shoppingList.items[idx].uncheck();
-    }
+  if(checkbox.checked === true){
+    shoppingList.items[idx].check();
+  }
+  if(checkbox.checked === false){
+    shoppingList.items[idx].uncheck();
+  }
 }
+
+function removeItemButtonClicked(idx){
+  let ulLists = document.querySelectorAll('ul');
+  let liLists = document.querySelectorAll('li');
+
+  liLists[idx].parentNode.parentNode.removeChild(liLists[idx].parentNode);
+  shoppingList.removeItem(shoppingList.items[idx]);
+
+
+
+
+
+  // shoppingListRenderOutput = shoppingList.render();
+
+  // document.getElementById('content').innerHTML = shoppingListRenderOutput;
+
+  // let checkBoxes = document.querySelectorAll('.checkboxClass');
+  // console.log(checkBoxes[0]);
+  // let deleteBoxes = document.querySelectorAll('.deleteBoxClass');
+  // for(let i = 0; i < checkBoxes.length; i++){
+  //   checkBoxes[i].addEventListener('click', function(){
+  //     changeCheckedStatus(i, checkBoxes[i]);
+  //   });
+
+  //   deleteBoxes[i].addEventListener('click', function(){
+  //     removeItemButtonClicked(i);
+  //   });
+  // }
+
+}
+
+
 
 // && event.toElement.checked === true
