@@ -16,7 +16,9 @@ function add_to_shopping_list(){
 
   shoppingList.addItem(new_shopping_list_item);
 
-  document.getElementById('content').innerHTML = shoppingList.render();
+  shoppingListRenderOutput = shoppingList.render();
+
+  document.getElementById('content').innerHTML = shoppingListRenderOutput;
 }
 
 function changeCheckedStatus(idx, checkbox){

@@ -29,7 +29,9 @@ class ShoppingList {
   render() {
     var listHTML = document.createElement('ul');
     for(let i = 0; i < this.items.length; i++){
-      var listItem = document.createElement('li');
+      // var listItem = document.createElement('li');
+      // listItem.innerHTML = this.items[i].render();
+      var listItem = document.createElement('div');
       listItem.innerHTML = this.items[i].render();
       listHTML.appendChild(listItem);
     }
