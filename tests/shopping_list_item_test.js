@@ -38,6 +38,10 @@ describe('ShoppingListItem', ()=>{
     listItem.should.have.property('is_done');
   });
 
+  it('should have a default is_done value of false', ()=>{
+    listItem.is_done.should.equal(false);
+  });
+
   it('should have a method named check', ()=>{
     listItem.check.should.be.a('function');
   });
