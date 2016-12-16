@@ -64,12 +64,12 @@ describe('ShoppingList', () => {
     shoppingList.items.should.not.contain(apples);
   });
 
-  // it('should throw an error', () => {
-  //   shoppingList.removeItem().should.fail();
-  // });
-
   it('should have a method named render', () => {
     shoppingList.render.should.be.a('function');
+  });
+
+  it('should return an html string upon render() method', ()=> {
+    shoppingList.render().should.equal('<ul class="listHTML"></ul>');
   });
 
 

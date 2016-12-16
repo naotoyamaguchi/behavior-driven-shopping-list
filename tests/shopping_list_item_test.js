@@ -64,4 +64,8 @@ describe('ShoppingListItem', ()=>{
     listItem.render.should.be.a('function');
   });
 
+  it('should return an html string upon render() method', ()=> {
+    listItem.render().should.equal('<li class="completed_false"><span>Avocado: </span><span>Green and full of calories</span><input type="checkbox" class="checkboxClass"><button class="deleteBoxClass">X</button></li>');
+  });
+
 });
