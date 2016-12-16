@@ -37,9 +37,10 @@ describe('ShoppingList', () => {
     shoppingList.items.should.contain(cookies);
   });
 
-  // it('should throw an error', () => {
-  //   expect(shoppingList.addItem("brokenTest")).to.throw(Error);
-  // });
+  it('should throw an error', () => {
+    let brokenTest = {"thisis": "sooowrong", "notagood": "object", "notevenan": "instanceofItem"};
+    (()=>(shoppingList.addItem(brokenTest))).should.throw('Not a valid input for the shopping list!');
+  });
 
   it('should have a method named removeItem', () => {
     shoppingList.removeItem.should.be.a('function');

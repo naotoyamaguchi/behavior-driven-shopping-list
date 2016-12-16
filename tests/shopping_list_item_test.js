@@ -4,8 +4,8 @@
 // console.log('chai', chai);
 // console.log('describe', describe);
 
-const should = chai.should();
-const expect = chai.expect();
+// const should = chai.should();
+// const expect = chai.expect();
 
 describe('ShoppingListItem', ()=>{
   let listItem;
