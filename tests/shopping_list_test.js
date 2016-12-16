@@ -22,7 +22,7 @@ describe('ShoppingList', () => {
     shoppingList.should.have.property('items');
   });
 
-  it('should contain an empty array', () => {
+  it('new instance of shoppingList.items should be an empty array', () => {
     shoppingList.items.should.be.an('array');
     shoppingList.items.should.deep.equal([]);
   });
@@ -70,5 +70,7 @@ describe('ShoppingList', () => {
   it('should have a method named render', () => {
     shoppingList.render.should.be.a('function');
   });
+
+
 
 });
